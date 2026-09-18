@@ -1,0 +1,41 @@
+# Keil uVision build outputs
+Objects/
+Listings/
+DebugConfig/
+RTE/
+Build/
+
+# Keil intermediate files
+*.axf
+*.elf
+*.map
+*.htm
+*.crf
+*.d
+*.lnp
+*.dep
+*.o
+*.lst
+*.sct
+*.iex
+*.scvd
+
+# Keil user-specific project and debugger state
+*.uvoptx
+*.uvguix.*
+*.uvgui.*
+*.bak
+
+# Optional: firmware binaries (uncomment if you don't want to commit them)
+# *.hex
+# *.bin
+
+# VS Code
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db

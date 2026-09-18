@@ -1,0 +1,25 @@
+#ifndef __SERIAL_H
+#define __SERIAL_H
+#include "stm32f10x.h"
+
+#include <stdio.h>
+
+extern uint8_t Serial_TxPacket[];
+extern uint8_t Serial_RxPacket[];
+extern volatile uint8_t g_serial_cmd;   // 串口屏发来的单字符命令
+
+void Serial_Init(void);
+void Serial_SendByte(uint8_t Byte);
+void Serial_SendArray(uint8_t *Array, uint16_t Length);
+void Serial_SendString(char *String);
+void Serial_SendNumber(uint32_t Number, uint8_t Length);
+void Serial_Printf(char *format, ...);
+
+void Serial_SendPacket(void);
+uint8_t Serial_GetRxFlag(void);
+void Serial_FlushRX(void);   // 清空RX缓冲, 丢弃TJC回声
+void Serial_ResetTJCTransferFlags(void);
+uint8_t Serial_TakeTJCReady(void);      // 收到 FE FF FF FF
+uint8_t Serial_TakeTJCEnd(void);        // 收到 FD FF FF FF
+
+#endif
